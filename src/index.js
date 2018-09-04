@@ -8,6 +8,10 @@ import products from './products.json';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
+import {appReducer} from './modules/reducer';
+
+
+
 const initialState = {
                       products:
                       products.reduce(
@@ -19,7 +23,7 @@ const initialState = {
                     {}),
                       cart: {},
                      }
-const store = createStore(state => state, initialState,
+const store = createStore(appReducer, initialState,
    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
